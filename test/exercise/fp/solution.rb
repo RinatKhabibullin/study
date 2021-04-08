@@ -5,6 +5,7 @@ module Exercise
         ratings = array.reject { |el| el['country'].nil? || el['country'].split(',').length < 2 }
                        .reject { |el| el['rating_kinopoisk'].to_f.nil? || el['rating_kinopoisk'].to_f.zero? }
                        .map { |el| el['rating_kinopoisk'].to_f }
+
         sum = ratings.reduce(:+)
         sum / ratings.length
       end
